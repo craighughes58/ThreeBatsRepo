@@ -17,9 +17,14 @@ public class PlayerController : MonoBehaviour
 
     public PlayerActions Actions { get; private set; }
 
+    public static PlayerController Instance;
     private void Awake()
     {
         Actions = new PlayerActions();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     private void OnEnable()
