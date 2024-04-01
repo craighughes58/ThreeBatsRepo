@@ -63,17 +63,22 @@ public class PlayerMovement : MonoBehaviour
     private void OnDuck(InputAction.CallbackContext context)
     {
         _isDucking = !_isDucking;
-        
         PlayerController _pc = GetComponent<PlayerController>();
+
         if(_isDucking)
         {
             _pc.SetDuckingSprite();
-            _currentSpeed = _duckingSpeed;
+            _currentSpeed = _duckingSpeed; 
         }
         else
         {
            _pc.SetDefaltSprite();
             _currentSpeed = _defaultSpeed;
+        }
+
+        if (GetComponent<PlayerAttack>().HasBroom())
+        {
+            GetComponentInChildren<Broom>().ChangePosition(_isDucking);
         }
     }
 

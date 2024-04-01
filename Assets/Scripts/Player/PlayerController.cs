@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
 
     public PlayerActions Actions { get; private set; }
 
-
     private void Awake()
     {
         Actions = new PlayerActions();
@@ -28,13 +27,28 @@ public class PlayerController : MonoBehaviour
         Actions.Enable();
     }
 
+    /// <summary>
+    /// Sets default craig
+    /// </summary>
     public void SetDefaltSprite()
     {
         GetComponent<SpriteRenderer>().sprite = _default;
     }
 
+    /// <summary>
+    /// Sets crouching craig
+    /// </summary>
     public void SetDuckingSprite()
     {
         GetComponent<SpriteRenderer>().sprite = _ducking;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.TryGetComponent<Broom>(out Broom broom))
+        {
+            GetComponent<PlayerAttack>().CollectBroom();
+            broom.AttachToCraig();
+        }
     }
 }
