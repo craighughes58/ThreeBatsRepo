@@ -97,7 +97,6 @@ public class GameController : MonoBehaviour
 
     #endregion
 
-
     #region Raccoon!
     /// <summary>
     /// Spawns raccoon at the end of the game
