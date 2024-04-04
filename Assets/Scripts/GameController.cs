@@ -21,6 +21,9 @@ public class GameController : MonoBehaviour
 
     #region Actions
 
+    /// <summary>
+    /// Called when all bats have been caught
+    /// </summary>
     public static Action CaughtAllBats;
 
     #endregion
@@ -98,6 +101,7 @@ public class GameController : MonoBehaviour
     #endregion
 
     #region Raccoon!
+
     /// <summary>
     /// Spawns raccoon at the end of the game
     /// </summary>
