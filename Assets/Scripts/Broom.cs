@@ -29,11 +29,18 @@ public class Broom : MonoBehaviour
 
     #endregion
 
+    #region Public & Accessor Variables
+
+    public bool IsThrown {  get; private set; }
+
+    #endregion
+
     #region Unity Functions
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         Physics2D.IgnoreCollision(GetComponentInParent<PlayerController>().GetComponent<Collider2D>(), _collider);
+        IsThrown = false;
     }
 
     #endregion
@@ -46,6 +53,7 @@ public class Broom : MonoBehaviour
     /// <param name="force"></param>
     public void Throw(float force)
     {
+        IsThrown = true;
         transform.parent = null;
         _rb.bodyType = RigidbodyType2D.Dynamic;
         _rb.AddForce(transform.up * force);
@@ -57,6 +65,7 @@ public class Broom : MonoBehaviour
     /// </summary>
     public void AttachToCraig()
     {
+        IsThrown = false;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         transform.parent = _craigsHand.transform.parent;

@@ -6,6 +6,7 @@
 // Brief Description : Controls the player
 *****************************************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,19 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController Instance;
     public PlayerActions Actions { get; private set; }
+
+    #endregion
+
+    #region Private Variables
+
+    private bool _isDead;
+
+    #endregion
+
+    #region Actions
+
+    public static Action DiedToBat;
+    public static Action DiedToRaccoon;
 
     #endregion
 
@@ -63,14 +77,55 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    #region State Management
+
+    /// <summary>
+    /// What happens when the player dies
+    /// </summary>
+    private void KilledByBat()
+    {
+        if (!_isDead)
+        {
+            _isDead = true;
+            DiedToBat?.Invoke();
+        }
+    }
+
+    /// <summary>
+    /// What happens when the player dies
+    /// </summary>
+    private void KilledByRaccoon()
+    {
+        if (!_isDead)
+        {
+            _isDead = true;
+            DiedToRaccoon?.Invoke();
+        }
+    }
+
+    #endregion
+
     #region Collision Handling
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Detects broom to pickup
         if (collision.transform.TryGetComponent<Broom>(out Broom broom))
         {
             GetComponent<PlayerAttack>().CollectBroom();
             broom.AttachToCraig();
+        }
+
+        // Detects bat to lose
+        if(collision.transform.TryGetComponent<BatBehaviour>(out BatBehaviour batBehaviour))
+        {
+            KilledByBat();
+        }
+
+        // Detects raccoon to lose
+        if (collision.transform.TryGetComponent<RaccoonBehavior>(out RaccoonBehavior racBehaviour))
+        {
+            KilledByRaccoon();
         }
     }
 

@@ -1,11 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BatBehaviour : MonoBehaviour
 {
-
-
     #region Serialized Variables
     [Tooltip("The areas on the wall that the bat flies to")]
     [SerializeField] private List<Transform> _wallNodes;
@@ -33,6 +32,11 @@ public class BatBehaviour : MonoBehaviour
     private Transform _nextNode = null;
     #endregion
 
+    #region Actions
+
+    public static Action BatDied;
+
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -47,10 +51,10 @@ public class BatBehaviour : MonoBehaviour
     {
         SetNextNode();
         //wait on the wall
-        yield return new WaitForSeconds(Random.Range(_wallDelayBounds.x,_wallDelayBounds.y));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(_wallDelayBounds.x,_wallDelayBounds.y));
 
         //50/50 chance they fly at the player as long as its not the first movement
-        if(Random.Range(0,2) == 0 && !firstRun)
+        if(UnityEngine.Random.Range(0,2) == 0 && !firstRun)
         {
             while(!_reachedPlayer)
             {
@@ -80,7 +84,7 @@ public class BatBehaviour : MonoBehaviour
         Transform prevNode = _nextNode;
         while(_nextNode == prevNode)
         {
-            _nextNode = _wallNodes[Random.Range(0, _wallNodes.Count)];
+            _nextNode = _wallNodes[UnityEngine.Random.Range(0, _wallNodes.Count)];
         }
         
     }
@@ -100,7 +104,14 @@ public class BatBehaviour : MonoBehaviour
         }
         else if(collision.gameObject.tag.Equals("Broom"))
         {
-            Destroy(gameObject);
+            if(collision.TryGetComponent<Broom>(out Broom broom))
+            {
+                if(broom.IsThrown)
+                {
+                    BatDied?.Invoke();
+                    Destroy(gameObject);
+                }
+            }   
         }
     }
     #endregion
