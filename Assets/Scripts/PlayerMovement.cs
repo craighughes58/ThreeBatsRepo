@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _rb.velocity = _movement * _currentSpeed;
+        RotatePlayer();
     }
     #endregion
 
@@ -93,10 +94,21 @@ public class PlayerMovement : MonoBehaviour
             _currentSpeed = _defaultSpeed;
         }
 
-        if (GetComponent<PlayerAttack>().HasBroom())
+        if (GetComponent<PlayerAttack>().HasBroom)
         {
             GetComponentInChildren<Broom>().ChangePosition(IsDucking);
         }
+    }
+
+    /// <summary>
+    /// Rotates player to the mouse
+    /// </summary>
+    private void RotatePlayer()
+    {
+        Vector3 playerWorldPos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 lookDir = Input.mousePosition - playerWorldPos;
+        float lookAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(lookAngle - 90, Vector3.forward);
     }
 
     #endregion
