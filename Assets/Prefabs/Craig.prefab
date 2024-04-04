@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 5443066980799247958}
   - component: {fileID: 3340808043325987354}
   - component: {fileID: 863950195316562383}
-  - component: {fileID: 5450540187414246764}
   - component: {fileID: 5050059384559423186}
   - component: {fileID: 2208878478279267903}
   - component: {fileID: 3782285019690042412}
+  - component: {fileID: 8074240128434813504}
   m_Layer: 0
   m_Name: Craig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,51 +119,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &5450540187414246764
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257916462983795023}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &5050059384559423186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +161,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _throwable: {fileID: 2553464673091360363}
   _throwForce: 1500
+--- !u!60 &8074240128434813504
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257916462983795023}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.0625, y: 0.3125}
+      - {x: -0.390625, y: 0.3125}
+      - {x: -0.390625, y: -0.109375}
+      - {x: -0.171875, y: -0.203125}
+      - {x: 0.359375, y: -0.203125}
+      - {x: 0.390625, y: -0.125}
+      - {x: 0.390625, y: 0.171875}
+      - {x: 0.203125, y: 0.296875}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1841178518131591087
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +284,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5443066980799247958}
     m_Modifications:
+    - target: {fileID: 2154507944366843271, guid: 6af58df1c467ae841992a8281c20758c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2154507944366843271, guid: 6af58df1c467ae841992a8281c20758c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.64732075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2154507944366843271, guid: 6af58df1c467ae841992a8281c20758c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.06633961
+      objectReference: {fileID: 0}
     - target: {fileID: 2467834420638170668, guid: 6af58df1c467ae841992a8281c20758c, type: 3}
       propertyPath: _craigsHand
       value: 
