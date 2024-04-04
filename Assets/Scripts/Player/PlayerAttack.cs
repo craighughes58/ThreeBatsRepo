@@ -14,12 +14,32 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerAttack : MonoBehaviour
 {
+    #region Serialized Variables
+
     [SerializeField] private GameObject _throwable;
     [SerializeField] private float _throwForce;
-    private bool _hasBroom;
+
+    #endregion
+
+    #region Private Variables
 
     private PlayerActions _playerActions;
     private PlayerMovement _playerMovement;
+
+    #endregion
+
+    #region Public & Accessor Variables
+
+    public bool HasBroom { get; private set; }
+
+    #endregion
+
+    #region Unity Functions
+
+    private void Awake()
+    {
+        _playerActions = new PlayerActions();
+    }
 
     private void OnEnable()
     {
@@ -27,21 +47,26 @@ public class PlayerAttack : MonoBehaviour
 
         _playerActions.DefaultMap.Attack.performed += OnAttack;
     }
-
-    private void Awake()
+    private void OnDisable()
     {
-        _playerActions = new PlayerActions();
+        _playerActions.Disable();
     }
+
+
+
 
     private void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
-        _hasBroom = true;
+        HasBroom = true;
 
         BoxCollider2D collider = _throwable.GetComponent<BoxCollider2D>();
-        
     }
-    
+
+    #endregion
+
+    #region Throwing Functions
+
     /// <summary>
     /// Called when player issues attack input
     /// </summary>
@@ -73,7 +98,7 @@ public class PlayerAttack : MonoBehaviour
         if (_throwable.TryGetComponent<Broom>(out Broom broom))
         {
             broom.Throw(_throwForce);
-            _hasBroom = false;
+            HasBroom = false;
         }
     }
 
@@ -82,7 +107,7 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     public void CollectBroom()
     {
-        _hasBroom = true;
+        HasBroom = true;
     }
 
     /// <summary>
@@ -91,19 +116,8 @@ public class PlayerAttack : MonoBehaviour
     /// <returns></returns>
     private bool CanAttack()
     {
-        return !_playerMovement.IsDucking() && _hasBroom;
+        return !_playerMovement.IsDucking && HasBroom;
     }
 
-    /// <summary>
-    /// If player has broom
-    /// </summary>
-    public bool HasBroom()
-    {
-        return _hasBroom;
-    }
-
-    private void OnDisable()
-    {
-        _playerActions.Disable();
-    }
+    #endregion
 }

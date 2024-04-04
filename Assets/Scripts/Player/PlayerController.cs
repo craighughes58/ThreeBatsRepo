@@ -12,12 +12,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Serialized Variables
+
     [SerializeField] private Sprite _default;
     [SerializeField] private Sprite _ducking;
 
-    public PlayerActions Actions { get; private set; }
+    #endregion
+
+    #region Public & Accessor Variables
 
     public static PlayerController Instance;
+    public PlayerActions Actions { get; private set; }
+
+    #endregion
+
+    #region Unity Functions
+
     private void Awake()
     {
         Actions = new PlayerActions();
@@ -32,6 +42,9 @@ public class PlayerController : MonoBehaviour
         Actions.Enable();
     }
 
+    #endregion
+
+    #region Sprite Management
     /// <summary>
     /// Sets default craig
     /// </summary>
@@ -48,6 +61,10 @@ public class PlayerController : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = _ducking;
     }
 
+    #endregion
+
+    #region Collision Handling
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.TryGetComponent<Broom>(out Broom broom))
@@ -56,4 +73,6 @@ public class PlayerController : MonoBehaviour
             broom.AttachToCraig();
         }
     }
+
+    #endregion
 }

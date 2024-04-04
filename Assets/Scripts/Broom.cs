@@ -13,18 +13,32 @@ using UnityEngine;
 
 public class Broom : MonoBehaviour
 {
+    #region Serialized Variables
+
     [SerializeField] private Transform _craigsHand;
     [SerializeField] private Transform _craigsHandDucking;
 
-    private Rigidbody2D _rb;
     [SerializeField] private Collider2D _collider;
     [SerializeField] private Collider2D _trigger;
 
+    #endregion
+
+    #region Private Variables
+
+    private Rigidbody2D _rb;
+
+    #endregion
+
+    #region Unity Functions
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         Physics2D.IgnoreCollision(GetComponentInParent<PlayerController>().GetComponent<Collider2D>(), _collider);
     }
+
+    #endregion
+
+    #region Throwing & Position Updates
 
     /// <summary>
     /// Broom yeeted
@@ -59,8 +73,13 @@ public class Broom : MonoBehaviour
         transform.rotation = _isDucking ? _craigsHandDucking.rotation : _craigsHand.rotation;
     }
 
+    #endregion
+
+    #region Collision Handling
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
+
+    #endregion
 }

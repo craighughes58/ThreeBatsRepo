@@ -5,10 +5,19 @@ using UnityEngine.Android;
 
 public class GameController : MonoBehaviour
 {
+    #region Public Variables
+
     public static GameController Instance;
+
+    #endregion
+
+    #region Private Variables
 
     private int _numBatsAlive = 0;
 
+    #endregion
+
+    #region Unity Functions
     private void Awake()
     {
         if(Instance == null)
@@ -21,6 +30,9 @@ public class GameController : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Raccoon!
     /// <summary>
     /// Spawns raccoon at the end of the game
     /// </summary>
@@ -29,6 +41,9 @@ public class GameController : MonoBehaviour
         // Spawn Raccoon here
     }
 
+    #endregion
+
+    #region Game Over Management
     /// <summary>
     /// Called when the game ends
     /// </summary>
@@ -45,4 +60,6 @@ public class GameController : MonoBehaviour
     {
         // Load end game scene here
     }
+
+    #endregion
 }

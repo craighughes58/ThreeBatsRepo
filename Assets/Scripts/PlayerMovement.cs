@@ -13,20 +13,35 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Serialized Variables
+
     [SerializeField] private float _defaultSpeed;
     [SerializeField] private float _duckingSpeed;
+
+    #endregion
+
+    #region Private Variables
+
     private float _currentSpeed;
 
     private PlayerActions _playerActions;
     private Vector2 _movement;
     private Rigidbody2D _rb;
-    private bool _isDucking;
+    public bool IsDucking { get; private set; }
 
-    // Start is called before the first frame update
+    #endregion
+
+    #region Unity Functions
+
     private void Awake()
     {
         _playerActions = new PlayerActions();
         _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        _currentSpeed = _defaultSpeed;
     }
 
     private void OnEnable()
@@ -39,16 +54,18 @@ public class PlayerMovement : MonoBehaviour
         _playerActions.DefaultMap.Duck.canceled += OnDuck;
     }
 
-    private void Start()
+    private void OnDisable()
     {
-        _currentSpeed = _defaultSpeed;
+        _playerActions.Disable();
     }
 
     private void FixedUpdate()
     {
         _rb.velocity = _movement * _currentSpeed;
     }
+    #endregion
 
+    #region Movement Management
     /// <summary>
     /// Reads player movement values
     /// </summary>
@@ -58,14 +75,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Sets current ducking state
+    /// Sets current ducking state + sprite
     /// </summary>
     private void OnDuck(InputAction.CallbackContext context)
     {
-        _isDucking = !_isDucking;
+        IsDucking = !IsDucking;
         PlayerController _pc = GetComponent<PlayerController>();
 
-        if(_isDucking)
+        if(IsDucking)
         {
             _pc.SetDuckingSprite();
             _currentSpeed = _duckingSpeed; 
@@ -78,21 +95,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (GetComponent<PlayerAttack>().HasBroom())
         {
-            GetComponentInChildren<Broom>().ChangePosition(_isDucking);
+            GetComponentInChildren<Broom>().ChangePosition(IsDucking);
         }
     }
 
-    /// <summary>
-    /// Checks if player is currently ducking
-    /// </summary>
-    /// <returns> _isDucking </returns>
-    public bool IsDucking()
-    {
-        return _isDucking;
-    }
-
-    private void OnDisable()
-    {
-        _playerActions.Disable();
-    }
+    #endregion
 }
