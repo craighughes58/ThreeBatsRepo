@@ -119,7 +119,11 @@ public class PlayerController : MonoBehaviour
         // Detects bat to lose
         if(collision.transform.TryGetComponent<BatBehaviour>(out BatBehaviour batBehaviour))
         {
-            KilledByBat();
+            
+            if(!GetComponent<PlayerMovement>().IsDucking)
+            {
+                KilledByBat();
+            }
         }
 
         // Detects raccoon to lose

@@ -105,10 +105,13 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void RotatePlayer()
     {
-        Vector3 playerWorldPos = Camera.main.WorldToScreenPoint(transform.position);
-        Vector3 lookDir = Input.mousePosition - playerWorldPos;
-        float lookAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(lookAngle - 90, Vector3.forward);
+        if(!IsDucking)
+        {
+            Vector3 playerWorldPos = Camera.main.WorldToScreenPoint(transform.position);
+            Vector3 lookDir = Input.mousePosition - playerWorldPos;
+            float lookAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(lookAngle - 90, Vector3.forward);
+        }
     }
 
     #endregion
