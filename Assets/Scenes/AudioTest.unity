@@ -238,7 +238,7 @@ MonoBehaviour:
       Data4: 1415110502
     Path: event:/ThrowBroom
   Event: 
-  PlayEvent: 1
+  PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -1644,6 +1644,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4813174449426976347, guid: 12df4170675b3484987ffa4c23cab477, type: 3}
   m_PrefabInstance: {fileID: 635802021}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &698953674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7976174598046653035, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
+  m_PrefabInstance: {fileID: 2084421304100300803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &833967769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,6 +2893,14 @@ PrefabInstance:
     - target: {fileID: 5443066980799247958, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474684492546340306, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
+      propertyPath: _throwSound
+      value: 
+      objectReference: {fileID: 698953674}
+    - target: {fileID: 7976174598046653035, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
+      propertyPath: m_TagString
+      value: FMOD SFX
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -21,6 +21,9 @@ public class Broom : MonoBehaviour
     [SerializeField] private Collider2D _collider;
     [SerializeField] private Collider2D _trigger;
 
+    [Header("SFX")]
+    [SerializeField] private GameObject _throwSound;
+
     #endregion
 
     #region Private Variables
@@ -58,6 +61,8 @@ public class Broom : MonoBehaviour
         _rb.bodyType = RigidbodyType2D.Dynamic;
         _rb.AddForce(transform.up * force);
         _rb.freezeRotation = true;
+
+        _throwSound.GetComponent<FMODUnity.StudioEventEmitter>().Play();
     }
 
     /// <summary>
