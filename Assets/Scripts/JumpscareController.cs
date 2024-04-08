@@ -9,6 +9,9 @@ public class JumpscareController : MonoBehaviour
 
     [Tooltip("The images that show up when jumpscares happen")]
     [SerializeField] private List<Image> _jumpScares;
+
+    [Tooltip("How fast the jumpscare fades away")]
+    [SerializeField] private float _dissolveSpeed;
     
     #endregion
 
@@ -26,11 +29,18 @@ public class JumpscareController : MonoBehaviour
 
     public void ActivateJumpscare()
     {
-        
+        StartCoroutine(JumpscareCoroutine());
     }
 
     private IEnumerator JumpscareCoroutine()
     {
-        yield return new WaitForEndOfFrame();
+        int randomJumpscare = Random.Range(0,_jumpScares.Count);
+        _jumpScares[randomJumpscare].enabled = true;
+        _jumpScares[randomJumpscare].color = new Color(1,1,1,1);
+        while (_jumpScares[randomJumpscare].color.a > 0)
+        {
+            _jumpScares[randomJumpscare].color = new Color(1, 1, 1, 1);
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
