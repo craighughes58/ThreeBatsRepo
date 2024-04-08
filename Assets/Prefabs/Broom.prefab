@@ -285,4 +285,4 @@ MonoBehaviour:
   _craigsHandDucking: {fileID: 0}
   _collider: {fileID: 2154507944366843271}
   _trigger: {fileID: 733929055732493743}
-  _throwSound: {fileID: 0}
+  _throwSound: {fileID: 538020001141903765}
