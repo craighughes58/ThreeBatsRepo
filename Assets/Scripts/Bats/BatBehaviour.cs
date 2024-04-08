@@ -15,6 +15,9 @@ public class BatBehaviour : MonoBehaviour
     [Tooltip("The minimum and maximum amount of time that the bat can stay on the wall")]
     [SerializeField] private Vector2 _wallDelayBounds;
 
+
+    [Tooltip("The jumpscare System")]
+    [SerializeField] private JumpscareController _jumpScarer;
     #endregion
 
     #region Private Variables
@@ -56,6 +59,7 @@ public class BatBehaviour : MonoBehaviour
         //50/50 chance they fly at the player as long as its not the first movement
         if(UnityEngine.Random.Range(0,2) == 0 && !firstRun)
         {
+            _jumpScarer.ActivateJumpscare();
             while(!_reachedPlayer)
             {
                 transform.position = Vector2.MoveTowards(transform.position, _playerPosition.position, _speed);
@@ -96,7 +100,7 @@ public class BatBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            _reachedPlayer = true;
+            StartCoroutine(DelayedFoundPlayer());
         }
         else if (collision.gameObject.tag.Equals("Node"))
         {
@@ -113,6 +117,12 @@ public class BatBehaviour : MonoBehaviour
                 }
             }   
         }
+    }
+
+    private IEnumerator DelayedFoundPlayer()
+    {
+        yield return new WaitForSeconds(.3f);
+        _reachedPlayer = true;
     }
     #endregion
 

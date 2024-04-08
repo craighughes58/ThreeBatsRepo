@@ -23,12 +23,13 @@ public class JumpscareController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
 
     public void ActivateJumpscare()
     {
+        StopCoroutine(JumpscareCoroutine());
         StartCoroutine(JumpscareCoroutine());
     }
 
@@ -39,8 +40,11 @@ public class JumpscareController : MonoBehaviour
         _jumpScares[randomJumpscare].color = new Color(1,1,1,1);
         while (_jumpScares[randomJumpscare].color.a > 0)
         {
-            _jumpScares[randomJumpscare].color = new Color(1, 1, 1, 1);
+            _jumpScares[randomJumpscare].color = new Color(1, 1, 1, _jumpScares[randomJumpscare].color.a -_dissolveSpeed);
             yield return new WaitForEndOfFrame();
         }
+
+        _jumpScares[randomJumpscare].enabled = false;
+
     }
 }
