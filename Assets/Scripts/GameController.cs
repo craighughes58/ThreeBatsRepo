@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -15,10 +16,13 @@ public class GameController : MonoBehaviour
 
     #region Private Variables
 
-    private int _numBatsAlive = 0;
+    private int _numBatsAlive = 3;
 
     [Tooltip("The light that the player will go to")]
     [SerializeField] private GameObject _doorLight;
+
+    [Tooltip("This text will notify the player that a door opened")]
+    [SerializeField] private TextMeshProUGUI _doorOpensText;
     #endregion
 
     #region Actions
@@ -96,6 +100,7 @@ public class GameController : MonoBehaviour
 
         if(_numBatsAlive <= 0)
         {
+            StartCoroutine(NotifyOfDoor());
             _doorLight.SetActive(true);
             CaughtAllBats?.Invoke();
         }
@@ -146,6 +151,17 @@ public class GameController : MonoBehaviour
     private void OpenDoor()
     {
 
+    }
+
+    #endregion
+
+    #region UI
+
+    private IEnumerator NotifyOfDoor()
+    {
+        _doorOpensText.enabled = true;
+        yield return new WaitForSeconds(3f);
+        _doorOpensText.enabled = false;
     }
 
     #endregion
