@@ -18,6 +18,9 @@ public class BatBehaviour : MonoBehaviour
 
     [Tooltip("The jumpscare System")]
     [SerializeField] private JumpscareController _jumpScarer;
+
+    [Tooltip("The Captured text")]
+    [SerializeField] private GameObject _capturedScreen;
     #endregion
 
     #region Private Variables
@@ -114,6 +117,7 @@ public class BatBehaviour : MonoBehaviour
                 {
                     BatDied?.Invoke();
                     Destroy(gameObject);
+                    Destroy(Instantiate(_capturedScreen,transform.position,Quaternion.identity),1f);
                 }
             }   
         }

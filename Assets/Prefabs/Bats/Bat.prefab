@@ -103,6 +103,8 @@ MonoBehaviour:
   - {fileID: 0}
   _speed: 0.075
   _wallDelayBounds: {x: 2, y: 5}
+  _jumpScarer: {fileID: 0}
+  _capturedScreen: {fileID: 5092217506469483693, guid: 8c3b54448a1d5b24ba7ed7d653a3f8b4, type: 3}
 --- !u!60 &7228479813975194162
 PolygonCollider2D:
   m_ObjectHideFlags: 0
