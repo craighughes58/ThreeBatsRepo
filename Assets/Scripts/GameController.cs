@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
 
     private int _numBatsAlive = 0;
 
+    [Tooltip("The light that the player will go to")]
+    [SerializeField] private GameObject _doorLight;
     #endregion
 
     #region Actions
@@ -94,6 +96,7 @@ public class GameController : MonoBehaviour
 
         if(_numBatsAlive <= 0)
         {
+            _doorLight.SetActive(true);
             CaughtAllBats?.Invoke();
         }
     }
@@ -138,6 +141,11 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(buildIndex);
         // Load end game scene here
+    }
+
+    private void OpenDoor()
+    {
+
     }
 
     #endregion
