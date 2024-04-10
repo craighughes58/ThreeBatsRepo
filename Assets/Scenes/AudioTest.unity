@@ -1581,11 +1581,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4813174449426976347, guid: 12df4170675b3484987ffa4c23cab477, type: 3}
   m_PrefabInstance: {fileID: 635802021}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &698953674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7976174598046653035, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-  m_PrefabInstance: {fileID: 2084421304100300803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &833967769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,6 +1977,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1281159627}
+  - component: {fileID: 1281159629}
+  - component: {fileID: 1281159628}
+  - component: {fileID: 1281159630}
+  - component: {fileID: 1281159631}
+  - component: {fileID: 1281159632}
+  - component: {fileID: 1281159633}
+  - component: {fileID: 1281159634}
+  - component: {fileID: 1281159635}
   m_Layer: 0
   m_Name: SFX Controller
   m_TagString: Untagged
@@ -2004,6 +2007,242 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1281159628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281159626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1914827517
+      Data2: 1232147932
+      Data3: -58514507
+      Data4: 1415110502
+    Path: event:/ThrowBroom
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1281159629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281159626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65cdb1db19ce1084bb897ba14b4f899e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _broomThrow: {fileID: 1281159628}
+  _pickUpBroom: {fileID: 1281159630}
+  _batAttack: {fileID: 1281159631}
+  _racoonNoises: {fileID: 1281159632}
+  _enemyCaptured: {fileID: 1281159633}
+  _duck: {fileID: 1281159634}
+  _doorOpens: {fileID: 1281159635}
+--- !u!114 &1281159630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281159626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -410183718
+      Data2: 1180581275
+      Data3: 1246053551
+      Data4: 1769633000
+    Path: event:/PickUpBroom
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1281159631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281159626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -454513770
+      Data2: 1082214260
+      Data3: 1218316701
+      Data4: -831563173
+    Path: event:/BatAttack
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1281159632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281159626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -410183718
+      Data2: 1180581275
+      Data3: 1246053551
+      Data4: 1769633000
+    Path: event:/PickUpBroom
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1281159633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281159626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 610246025
+      Data2: 1131779539
+      Data3: -1751293537
+      Data4: -1075699275
+    Path: event:/CaptureEnemy
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1281159634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281159626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -805594589
+      Data2: 1141001673
+      Data3: -1491176575
+      Data4: 657235646
+    Path: event:/Duck
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1281159635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281159626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -702254252
+      Data2: 1155033416
+      Data3: 524145830
+      Data4: 122020428
+    Path: event:/A_door_opens
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1429769606
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,13 +3007,15 @@ PrefabInstance:
     - target: {fileID: 5474684492546340306, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
       propertyPath: _throwSound
       value: 
-      objectReference: {fileID: 698953674}
+      objectReference: {fileID: 0}
     - target: {fileID: 7976174598046653035, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
       propertyPath: m_TagString
       value: FMOD SFX
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 2738077166923604261, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 7976174598046653035, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}

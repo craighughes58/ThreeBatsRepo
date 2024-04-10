@@ -13,6 +13,12 @@ public class GameController : MonoBehaviour
 
     #endregion
 
+    #region Serialized Variables
+
+    [SerializeField] private int _startingBatCount = 3;
+
+    #endregion
+
     #region Private Variables
 
     private int _numBatsAlive = 0;
@@ -25,6 +31,9 @@ public class GameController : MonoBehaviour
     /// Called when all bats have been caught
     /// </summary>
     public static Action CaughtAllBats;
+
+    public static Action<SFXController.SFX> SpawnedRaccoon;
+    public static Action<SFXController.SFX> DoorOpens;
 
     #endregion
 
@@ -39,6 +48,11 @@ public class GameController : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void Start()
+    {
+        _numBatsAlive = _startingBatCount;
     }
 
     private void OnEnable()
@@ -95,6 +109,7 @@ public class GameController : MonoBehaviour
         if(_numBatsAlive <= 0)
         {
             CaughtAllBats?.Invoke();
+            DoorOpens?.Invoke(SFXController.SFX.DOOROPENS);
         }
     }
 
@@ -109,6 +124,7 @@ public class GameController : MonoBehaviour
     {
         // Spawn Raccoon here
         print("Spawned Raccoon");
+        SpawnedRaccoon.Invoke(SFXController.SFX.RACCOONNOISES);
     }
 
     #endregion

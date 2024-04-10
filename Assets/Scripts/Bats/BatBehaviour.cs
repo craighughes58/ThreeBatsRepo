@@ -35,6 +35,8 @@ public class BatBehaviour : MonoBehaviour
     #region Actions
 
     public static Action BatDied;
+    public static Action<SFXController.SFX> BatAttack;
+    public static Action<SFXController.SFX> BatHit;
 
     #endregion
 
@@ -49,6 +51,8 @@ public class BatBehaviour : MonoBehaviour
     #region Movement and Node Management
     private IEnumerator MovementPattern(bool firstRun)
     {
+        BatAttack?.Invoke(SFXController.SFX.BATATTACK);
+
         SetNextNode();
         //wait on the wall
         yield return new WaitForSeconds(UnityEngine.Random.Range(_wallDelayBounds.x,_wallDelayBounds.y));
@@ -108,7 +112,9 @@ public class BatBehaviour : MonoBehaviour
             {
                 if(broom.IsThrown)
                 {
+                    BatHit?.Invoke(SFXController.SFX.ENEMYCAPTURED);
                     BatDied?.Invoke();
+                      
                     Destroy(gameObject);
                 }
             }   
