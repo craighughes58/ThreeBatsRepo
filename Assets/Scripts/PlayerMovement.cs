@@ -6,6 +6,7 @@
 // Brief Description : Player Movement Controller
 *****************************************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _movement;
     private Rigidbody2D _rb;
     public bool IsDucking { get; private set; }
+
+    #endregion
+
+    #region Actions
+
+    public static Action<SFXController.SFX> Duck;
 
     #endregion
 
@@ -85,6 +92,8 @@ public class PlayerMovement : MonoBehaviour
 
         if(IsDucking)
         {
+            Duck?.Invoke(SFXController.SFX.DUCK);
+
             _pc.SetDuckingSprite();
             _currentSpeed = _duckingSpeed; 
         }

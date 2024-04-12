@@ -6,6 +6,7 @@
 // Brief Description : A broom!
 *****************************************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
@@ -21,17 +22,28 @@ public class Broom : MonoBehaviour
     [SerializeField] private Collider2D _collider;
     [SerializeField] private Collider2D _trigger;
 
+    [Header("SFX")]
+    [SerializeField] private GameObject _throwSound;
+
     #endregion
 
     #region Private Variables
 
     private Rigidbody2D _rb;
+    private bool _attachedToCraig = true;
 
     #endregion
 
     #region Public & Accessor Variables
 
     public bool IsThrown {  get; private set; }
+
+    #endregion
+
+    #region Actions
+
+    public static Action<SFXController.SFX> BroomThrown;
+    public static Action<SFXController.SFX> PickUpBroom;
 
     #endregion
 
@@ -53,6 +65,9 @@ public class Broom : MonoBehaviour
     /// <param name="force"></param>
     public void Throw(float force)
     {
+        BroomThrown?.Invoke(SFXController.SFX.BROOMTHROW);
+
+        _attachedToCraig = false;
         IsThrown = true;
         transform.parent = null;
         _rb.bodyType = RigidbodyType2D.Dynamic;
@@ -65,11 +80,17 @@ public class Broom : MonoBehaviour
     /// </summary>
     public void AttachToCraig()
     {
-        IsThrown = false;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-        transform.parent = _craigsHand.transform.parent;
-        ChangePosition(false);
+        if (!_attachedToCraig)
+        {
+            PickUpBroom?.Invoke(SFXController.SFX.PICKUPBROOM);
+
+            _attachedToCraig = true;
+            IsThrown = false;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            transform.parent = _craigsHand.transform.parent;
+            ChangePosition(false);
+        }
     }
 
     /// <summary>

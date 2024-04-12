@@ -14,6 +14,12 @@ public class GameController : MonoBehaviour
 
     #endregion
 
+    #region Serialized Variables
+
+    [SerializeField] private int _startingBatCount = 3;
+
+    #endregion
+
     #region Private Variables
 
     private int _numBatsAlive = 3;
@@ -32,6 +38,9 @@ public class GameController : MonoBehaviour
     /// </summary>
     public static Action CaughtAllBats;
 
+    public static Action<SFXController.SFX> SpawnedRaccoon;
+    public static Action<SFXController.SFX> DoorOpens;
+
     #endregion
 
     #region Unity Functions
@@ -45,6 +54,11 @@ public class GameController : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void Start()
+    {
+        _numBatsAlive = _startingBatCount;
     }
 
     private void OnEnable()
@@ -103,6 +117,7 @@ public class GameController : MonoBehaviour
             StartCoroutine(NotifyOfDoor());
             _doorLight.SetActive(true);
             CaughtAllBats?.Invoke();
+            DoorOpens?.Invoke(SFXController.SFX.DOOROPENS);
         }
     }
 
@@ -117,6 +132,7 @@ public class GameController : MonoBehaviour
     {
         // Spawn Raccoon here
         print("Spawned Raccoon");
+        SpawnedRaccoon.Invoke(SFXController.SFX.RACCOONNOISES);
     }
 
     #endregion
