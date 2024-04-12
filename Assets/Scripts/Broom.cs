@@ -22,9 +22,6 @@ public class Broom : MonoBehaviour
     [SerializeField] private Collider2D _collider;
     [SerializeField] private Collider2D _trigger;
 
-    [Header("SFX")]
-    [SerializeField] private GameObject _throwSound;
-
     #endregion
 
     #region Private Variables
