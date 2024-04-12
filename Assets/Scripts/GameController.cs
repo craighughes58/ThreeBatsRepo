@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     #region Private Variables
 
     private int _numBatsAlive = 3;
+    private bool _diedToBat = false;
 
     [Tooltip("The light that the player will go to")]
     [SerializeField] private GameObject _doorLight;
@@ -83,21 +84,25 @@ public class GameController : MonoBehaviour
     {
         if (isSubscribing)
         {
-            PlayerController.DiedToBat += BatEnding;
-            PlayerController.DiedToRaccoon += RaccoonEnding;
+            PlayerController.DiedToBat += SetBatEnding;
+            PlayerController.DiedToRaccoon += SetRaccEnding;
 
             RaccoonTrigger.RaccoonTriggered += SpawnRaccoon;
 
             BatBehaviour.BatDied += BatDied;
+
+            FadeToBlack.DoneFading += LoadEndScene;
         }
         else
         {
-            PlayerController.DiedToBat -= BatEnding;
-            PlayerController.DiedToRaccoon -= RaccoonEnding;
+            PlayerController.DiedToBat -= SetBatEnding;
+            PlayerController.DiedToRaccoon -= SetRaccEnding;
 
             RaccoonTrigger.RaccoonTriggered -= SpawnRaccoon;
 
             BatBehaviour.BatDied -= BatDied;
+
+            FadeToBlack.DoneFading -= LoadEndScene;
         }
     }
 
@@ -111,7 +116,7 @@ public class GameController : MonoBehaviour
     private void BatDied()
     {
         _numBatsAlive--;
-
+        
         if(_numBatsAlive <= 0)
         {
             StartCoroutine(NotifyOfDoor());
@@ -140,33 +145,34 @@ public class GameController : MonoBehaviour
     #region Game Over Management
 
     /// <summary>
-    /// Calls the Bat Ending
+    /// Sets bat ending bool if player died to bat
     /// </summary>
-    private void BatEnding()
+    private void SetBatEnding()
     {
-        LoadEndScene(3);
+        _diedToBat = true;
     }
-    
+
     /// <summary>
-    /// Calls the Raccoon ending
+    /// Sets bat ending bool if player died to raccoon
     /// </summary>
-    private void RaccoonEnding()
+    private void SetRaccEnding()
     {
-        LoadEndScene(5);
+        _diedToBat = false;
     }
 
     /// <summary>
     /// Loads end game scene
     /// </summary>
-    private void LoadEndScene(int buildIndex)
+    private void LoadEndScene()
     {
-        SceneManager.LoadScene(buildIndex);
-        // Load end game scene here
-    }
-
-    private void OpenDoor()
-    {
-
+        if(_diedToBat)
+        {
+            SceneManager.LoadScene(3);
+        }
+        else
+        {
+            SceneManager.LoadScene(5);
+        }
     }
 
     #endregion

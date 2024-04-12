@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     #region Private Variables
 
-    private bool _isDead;
+    public bool IsDead { get; set; }
 
     #endregion
 
@@ -84,9 +84,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void KilledByBat()
     {
-        if (!_isDead)
+        if (!IsDead)
         {
-            _isDead = true;
+            IsDead = true;
             DiedToBat?.Invoke();
         }
     }
@@ -96,9 +96,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void KilledByRaccoon()
     {
-        if (!_isDead)
+        if (!IsDead)
         {
-            _isDead = true;
+            IsDead = true;
             DiedToRaccoon?.Invoke();
         }
     }

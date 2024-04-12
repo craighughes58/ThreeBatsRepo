@@ -36,6 +36,9 @@ public class BatBehaviour : MonoBehaviour
 
     //The wall node that the bat needs to move towards
     private Transform _nextNode = null;
+
+    //has the bat hit the broom?
+    private bool _hasBeenHit = false;
     #endregion
 
     #region Actions
@@ -57,7 +60,14 @@ public class BatBehaviour : MonoBehaviour
     #region Movement and Node Management
     private IEnumerator MovementPattern(bool firstRun)
     {
-        BatAttack?.Invoke(SFXController.SFX.BATATTACK);
+        try
+        {
+            BatAttack?.Invoke(SFXController.SFX.BATATTACK);
+        }
+        catch
+        {
+            Debug.Log("Unable to find SFX obj");
+        }
 
         SetNextNode();
         //wait on the wall
@@ -113,8 +123,9 @@ public class BatBehaviour : MonoBehaviour
         {
             _reachedNode = true;
         }
-        else if(collision.gameObject.tag.Equals("Broom"))
+        else if(collision.gameObject.tag.Equals("Broom") && !_hasBeenHit)
         {
+            _hasBeenHit = true;
             if(collision.TryGetComponent<Broom>(out Broom broom))
             {
                 if(broom.IsThrown)

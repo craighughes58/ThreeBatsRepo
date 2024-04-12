@@ -72,7 +72,7 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     private void OnAttack(InputAction.CallbackContext context)
     {
-        if(CanAttack())
+        if (CanAttack())
         {
             RotateThrowable();
             ThrowObject();
@@ -116,7 +116,7 @@ public class PlayerAttack : MonoBehaviour
     /// <returns></returns>
     private bool CanAttack()
     {
-        return !_playerMovement.IsDucking && HasBroom;
+        return !_playerMovement.IsDucking && HasBroom && !PlayerController.Instance.IsDead;
     }
 
     #endregion

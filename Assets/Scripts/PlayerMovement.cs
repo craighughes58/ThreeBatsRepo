@@ -79,7 +79,14 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void OnMove(InputAction.CallbackContext context)
     {
-        _movement = context.ReadValue<Vector2>();
+        if(!PlayerController.Instance.IsDead)
+        {
+            _movement = context.ReadValue<Vector2>();
+        }
+        else
+        {
+            _currentSpeed = 0f;
+        }
     }
 
     /// <summary>
@@ -87,25 +94,28 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void OnDuck(InputAction.CallbackContext context)
     {
-        IsDucking = !IsDucking;
-        PlayerController _pc = GetComponent<PlayerController>();
-
-        if(IsDucking)
+        if (!PlayerController.Instance.IsDead)
         {
-            Duck?.Invoke(SFXController.SFX.DUCK);
+            IsDucking = !IsDucking;
+            PlayerController _pc = GetComponent<PlayerController>();
 
-            _pc.SetDuckingSprite();
-            _currentSpeed = _duckingSpeed; 
-        }
-        else
-        {
-           _pc.SetDefaltSprite();
-            _currentSpeed = _defaultSpeed;
-        }
+            if (IsDucking)
+            {
+                Duck?.Invoke(SFXController.SFX.DUCK);
 
-        if (GetComponent<PlayerAttack>().HasBroom)
-        {
-            GetComponentInChildren<Broom>().ChangePosition(IsDucking);
+                _pc.SetDuckingSprite();
+                _currentSpeed = _duckingSpeed;
+            }
+            else
+            {
+                _pc.SetDefaltSprite();
+                _currentSpeed = _defaultSpeed;
+            }
+
+            if (GetComponent<PlayerAttack>().HasBroom)
+            {
+                GetComponentInChildren<Broom>().ChangePosition(IsDucking);
+            }
         }
     }
 
@@ -114,12 +124,15 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void RotatePlayer()
     {
-        if(!IsDucking)
+        if (!PlayerController.Instance.IsDead)
         {
-            Vector3 playerWorldPos = Camera.main.WorldToScreenPoint(transform.position);
-            Vector3 lookDir = Input.mousePosition - playerWorldPos;
-            float lookAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(lookAngle - 90, Vector3.forward);
+            if (!IsDucking)
+            {
+                Vector3 playerWorldPos = Camera.main.WorldToScreenPoint(transform.position);
+                Vector3 lookDir = Input.mousePosition - playerWorldPos;
+                float lookAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(lookAngle - 90, Vector3.forward);
+            }
         }
     }
 
