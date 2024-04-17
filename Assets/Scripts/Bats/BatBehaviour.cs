@@ -79,14 +79,14 @@ public class BatBehaviour : MonoBehaviour
             _jumpScarer.ActivateJumpscare();
             while(!_reachedPlayer)
             {
-                transform.position = Vector2.MoveTowards(transform.position, _playerPosition.position, _speed);
+                transform.position = Vector2.MoveTowards(transform.position, _playerPosition.position, _speed * Time.deltaTime);
                 yield return new WaitForEndOfFrame();
             }
         }
         //fly to the next wall 
         while (!_reachedNode)
         {
-            transform.position = Vector2.MoveTowards(transform.position, _nextNode.position, _speed);
+            transform.position = Vector2.MoveTowards(transform.position, _nextNode.position, _speed * Time.deltaTime);
             yield return new WaitForEndOfFrame();
 
         }

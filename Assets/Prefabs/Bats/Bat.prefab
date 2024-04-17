@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6391860541757418157}
   - component: {fileID: 1273906224148350648}
   - component: {fileID: 7228479813975194162}
+  - component: {fileID: 1384007406960800021}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -101,7 +102,7 @@ MonoBehaviour:
   _wallNodes:
   - {fileID: 0}
   - {fileID: 0}
-  _speed: 0.075
+  _speed: 0.1
   _wallDelayBounds: {x: 2, y: 5}
   _jumpScarer: {fileID: 0}
   _capturedScreen: {fileID: 5092217506469483693, guid: 8c3b54448a1d5b24ba7ed7d653a3f8b4, type: 3}
@@ -161,3 +162,24 @@ PolygonCollider2D:
       - {x: 0.4375, y: -0.53125}
       - {x: 0.84375, y: -0.53125}
   m_UseDelaunayMesh: 0
+--- !u!95 &1384007406960800021
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286579728792291925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9427ba2f1077fe744871481ef20c2600, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
