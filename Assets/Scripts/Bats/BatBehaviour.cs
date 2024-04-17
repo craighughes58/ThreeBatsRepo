@@ -52,6 +52,7 @@ public class BatBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Animator>().SetBool("isStationary", true);
         _playerPosition = PlayerController.Instance.transform;
         StartCoroutine(MovementPattern(true));
     }
@@ -72,9 +73,10 @@ public class BatBehaviour : MonoBehaviour
         SetNextNode();
         //wait on the wall
         yield return new WaitForSeconds(UnityEngine.Random.Range(_wallDelayBounds.x,_wallDelayBounds.y));
+        GetComponent<Animator>().SetBool("isStationary", false);
 
         //50/50 chance they fly at the player as long as its not the first movement
-        if(UnityEngine.Random.Range(0,2) == 0 && !firstRun)
+        if (UnityEngine.Random.Range(0,2) == 0 && !firstRun)
         {
             _jumpScarer.ActivateJumpscare();
             while(!_reachedPlayer)
@@ -91,7 +93,7 @@ public class BatBehaviour : MonoBehaviour
 
         }
 
-
+        GetComponent<Animator>().SetBool("isStationary", true);
         //reset variables for next coroutine 
         _reachedPlayer = false;
         _reachedNode = false;
