@@ -105,7 +105,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/BGMusic.bank
   Name: BGMusic
   StudioPath: bank:/BGMusic
-  lastModified: 638490536052666132
+  lastModified: 638490537102558221
   FileSizes: []
   Exists: 1
 --- !u!114 &-5672300880038052894
@@ -177,7 +177,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638490536053251804
+  lastModified: 638490537103066743
   FileSizes: []
   Exists: 1
 --- !u!114 &-3951582165084699245
@@ -222,7 +222,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638490536053324385
+  lastModified: 638490537103091799
   FileSizes:
   - Name: 
     Value: 1660
@@ -369,7 +369,7 @@ MonoBehaviour:
   - {fileID: -4097382737424517087}
   StringsBanks:
   - {fileID: -3108113877609981228}
-  cacheTime: 638490536053324385
+  cacheTime: 638490537103091799
   cacheVersion: 131617
 --- !u!114 &1755778977605061952
 MonoBehaviour:
