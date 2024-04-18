@@ -5768,6 +5768,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1528376516}
     - target: {fileID: 3577510236520024261, guid: e2276cfa8c071294d9bd8a2f06fdfadf, type: 3}
+      propertyPath: _doorLocation
+      value: 
+      objectReference: {fileID: 1709584853}
+    - target: {fileID: 3577510236520024261, guid: e2276cfa8c071294d9bd8a2f06fdfadf, type: 3}
       propertyPath: _doorOpensText
       value: 
       objectReference: {fileID: 266522143}

@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d4ea9c0c564e240a26092b48b5a582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startingBatCount: 3
+  _racoonPrefab: {fileID: 4965715287592554427, guid: 0a054c64decf95f4aa07d55415e9840c, type: 3}
+  _doorLocation: {fileID: 0}
+  _doorLight: {fileID: 0}
+  _doorOpensText: {fileID: 0}

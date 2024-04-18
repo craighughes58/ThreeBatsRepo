@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class GameController : MonoBehaviour
     #region Serialized Variables
 
     [SerializeField] private int _startingBatCount = 3;
+    [SerializeField] private GameObject _racoonPrefab;
+    [SerializeField] private Transform _doorLocation;
 
     #endregion
 
@@ -135,8 +138,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     private void SpawnRaccoon()
     {
-        // Spawn Raccoon here
-        print("Spawned Raccoon");
+        Instantiate(_racoonPrefab, _doorLocation.position, Quaternion.identity);
         SpawnedRaccoon.Invoke(SFXController.SFX.RACCOONNOISES);
     }
 
