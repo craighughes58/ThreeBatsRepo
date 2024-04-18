@@ -61,6 +61,7 @@ public class RaccoonBehavior : MonoBehaviour
 
     private IEnumerator CalculateZigZag()
     {
+        GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
         Vector3 nextOffset = Vector3.zero;
         //calculate
 

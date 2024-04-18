@@ -40,6 +40,12 @@ public class JumpscareController : MonoBehaviour
         _jumpScares[randomJumpscare].color = new Color(1,1,1,1);
         while (_jumpScares[randomJumpscare].color.a > 0)
         {
+            //IDictionary(PlayerController.Instance.)
+            if (PlayerController.Instance.IsDead)
+            {
+                _jumpScares[randomJumpscare].color = new Color(1, 1, 1, 0);
+                break;
+            }
             _jumpScares[randomJumpscare].color = new Color(1, 1, 1, _jumpScares[randomJumpscare].color.a -_dissolveSpeed);
             yield return new WaitForEndOfFrame();
         }
