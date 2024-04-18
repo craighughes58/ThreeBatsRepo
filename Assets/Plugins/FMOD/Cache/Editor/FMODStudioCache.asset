@@ -105,7 +105,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/BGMusic.bank
   Name: BGMusic
   StudioPath: bank:/BGMusic
-  lastModified: 638490526613854250
+  lastModified: 638490536052666132
   FileSizes: []
   Exists: 1
 --- !u!114 &-5672300880038052894
@@ -177,7 +177,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638490531733992039
+  lastModified: 638490536053251804
   FileSizes: []
   Exists: 1
 --- !u!114 &-3951582165084699245
@@ -222,10 +222,10 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638490531734022066
+  lastModified: 638490536053324385
   FileSizes:
   - Name: 
-    Value: 1608
+    Value: 1660
   Exists: 1
 --- !u!114 &-3018875923930647434
 MonoBehaviour:
@@ -318,8 +318,8 @@ MonoBehaviour:
     Data3: -58514507
     Data4: 1415110502
   Banks:
-  - {fileID: -4097382737424517087}
   - {fileID: 3786366571582682210}
+  - {fileID: -4097382737424517087}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -363,12 +363,13 @@ MonoBehaviour:
   - {fileID: -2015572308617966136}
   - {fileID: 2912691132992194076}
   - {fileID: 1755778977605061952}
+  - {fileID: 8765098333350985182}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4097382737424517087}
   StringsBanks:
   - {fileID: -3108113877609981228}
-  cacheTime: 638490531734758832
+  cacheTime: 638490536053324385
   cacheVersion: 131617
 --- !u!114 &1755778977605061952
 MonoBehaviour:
@@ -562,3 +563,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 20989
+--- !u!114 &8765098333350985182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AmbientBatChirp
+  m_EditorClassIdentifier: 
+  Path: event:/AmbientBatChirp
+  Guid:
+    Data1: -244727323
+    Data2: 1172483433
+    Data3: 1087903135
+    Data4: 2073742798
+  Banks:
+  - {fileID: -5887205591389374934}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30046
