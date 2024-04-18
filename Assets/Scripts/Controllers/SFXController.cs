@@ -13,6 +13,7 @@ public class SFXController : MonoBehaviour
     [SerializeField] FMODUnity.StudioEventEmitter _enemyCaptured;
     [SerializeField] FMODUnity.StudioEventEmitter _duck;
     [SerializeField] FMODUnity.StudioEventEmitter _doorOpens;
+    [SerializeField] FMODUnity.StudioEventEmitter _deathSound;
 
     #endregion
 
@@ -42,6 +43,8 @@ public class SFXController : MonoBehaviour
             GameController.DoorOpens += PlaySFX;
 
             PlayerMovement.Duck += PlaySFX;
+
+            PlayerController.DeathSFX += PlaySFX;
         }
         else
         {
@@ -55,6 +58,8 @@ public class SFXController : MonoBehaviour
             GameController.DoorOpens -= PlaySFX;
 
             PlayerMovement.Duck -= PlaySFX;
+
+            PlayerController.DeathSFX -= PlaySFX;
         }
     }
 
@@ -70,7 +75,8 @@ public class SFXController : MonoBehaviour
         RACCOONNOISES,
         ENEMYCAPTURED,
         DUCK,
-        DOOROPENS
+        DOOROPENS,
+        DEATH
     }
 
     #endregion
@@ -105,6 +111,7 @@ public class SFXController : MonoBehaviour
         _sfxDictionary.Add(SFX.ENEMYCAPTURED, _enemyCaptured);
         _sfxDictionary.Add(SFX.DUCK, _duck);
         _sfxDictionary.Add(SFX.DOOROPENS, _doorOpens);
+        _sfxDictionary.Add(SFX.DEATH, _deathSound);
     }
 
     private void PlaySFX(SFX sfx)

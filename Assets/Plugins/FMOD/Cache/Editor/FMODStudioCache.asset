@@ -27,6 +27,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8314454145329315857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Opening.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SFX/FmodBanks/Desktop/Opening.bank
+  Name: Opening
+  StudioPath: bank:/Opening
+  lastModified: 638490530557818915
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8116403102983900597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +177,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638490528065815832
+  lastModified: 638490531733992039
   FileSizes: []
   Exists: 1
 --- !u!114 &-3951582165084699245
@@ -204,10 +222,10 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638490528065914245
+  lastModified: 638490531734022066
   FileSizes:
   - Name: 
-    Value: 1468
+    Value: 1608
   Exists: 1
 --- !u!114 &-3018875923930647434
 MonoBehaviour:
@@ -300,8 +318,8 @@ MonoBehaviour:
     Data3: -58514507
     Data4: 1415110502
   Banks:
-  - {fileID: 3786366571582682210}
   - {fileID: -4097382737424517087}
+  - {fileID: 3786366571582682210}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -330,6 +348,7 @@ MonoBehaviour:
   - {fileID: -8116403102983900597}
   - {fileID: 1902375441753450784}
   - {fileID: 5625715645444658662}
+  - {fileID: -8314454145329315857}
   EditorEvents:
   - {fileID: -3018875923930647434}
   - {fileID: 4988149399655359967}
@@ -342,13 +361,42 @@ MonoBehaviour:
   - {fileID: 8275291178638639558}
   - {fileID: -3951582165084699245}
   - {fileID: -2015572308617966136}
+  - {fileID: 2912691132992194076}
+  - {fileID: 1755778977605061952}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4097382737424517087}
   StringsBanks:
   - {fileID: -3108113877609981228}
-  cacheTime: 638490528069224407
+  cacheTime: 638490531734758832
   cacheVersion: 131617
+--- !u!114 &1755778977605061952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AFateMostFowel
+  m_EditorClassIdentifier: 
+  Path: event:/AFateMostFowel
+  Guid:
+    Data1: -863268992
+    Data2: 1208040315
+    Data3: 748906941
+    Data4: 2008125746
+  Banks:
+  - {fileID: 3786366571582682210}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1082
 --- !u!114 &1902375441753450784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +442,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2912691132992194076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Excelcior speech
+  m_EditorClassIdentifier: 
+  Path: event:/Excelcior speech
+  Guid:
+    Data1: 1333133205
+    Data2: 1156591361
+    Data3: 2019054492
+    Data4: -1234614929
+  Banks:
+  - {fileID: -8314454145329315857}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24736
 --- !u!114 &3786366571582682210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +484,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638490526615151482
+  lastModified: 638490531734758832
   FileSizes: []
   Exists: 1
 --- !u!114 &4988149399655359967

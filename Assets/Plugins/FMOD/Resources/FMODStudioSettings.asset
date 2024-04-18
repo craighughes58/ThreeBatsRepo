@@ -639,6 +639,7 @@ MonoBehaviour:
   - Bank B
   - BGMusic
   - Endings
+  - Opening
   - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264

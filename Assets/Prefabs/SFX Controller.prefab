@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8500068001379904037}
   - component: {fileID: 5271801694097898500}
   - component: {fileID: 6937335758741907698}
+  - component: {fileID: 3607871413409276630}
   m_Layer: 0
   m_Name: SFX Controller
   m_TagString: Untagged
@@ -58,6 +59,7 @@ MonoBehaviour:
   _enemyCaptured: {fileID: 8500068001379904037}
   _duck: {fileID: 5271801694097898500}
   _doorOpens: {fileID: 6937335758741907698}
+  _deathSound: {fileID: 3607871413409276630}
 --- !u!114 &7659198800871057283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +82,7 @@ MonoBehaviour:
     Path: event:/ThrowBroom
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -111,7 +113,7 @@ MonoBehaviour:
     Path: event:/PickUpBroom
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -142,7 +144,7 @@ MonoBehaviour:
     Path: event:/BatAttack
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -173,7 +175,7 @@ MonoBehaviour:
     Path: event:/PickUpBroom
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -204,7 +206,7 @@ MonoBehaviour:
     Path: event:/CaptureEnemy
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -235,7 +237,7 @@ MonoBehaviour:
     Path: event:/Duck
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -266,7 +268,38 @@ MonoBehaviour:
     Path: event:/A_door_opens
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &3607871413409276630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6020057311752753661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -863268992
+      Data2: 1208040315
+      Data3: 748906941
+      Data4: 2008125746
+    Path: event:/AFateMostFowel
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

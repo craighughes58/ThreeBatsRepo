@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     public static Action DiedToBat;
     public static Action DiedToRaccoon;
+    public static Action<SFXController.SFX> DeathSFX;
 
     #endregion
 
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour
         if (!IsDead)
         {
             IsDead = true;
+            DeathSFX?.Invoke(SFXController.SFX.DEATH);
             DiedToBat?.Invoke();
         }
     }
@@ -99,6 +101,7 @@ public class PlayerController : MonoBehaviour
         if (!IsDead)
         {
             IsDead = true;
+            DeathSFX?.Invoke(SFXController.SFX.DEATH);
             DiedToRaccoon?.Invoke();
         }
     }
