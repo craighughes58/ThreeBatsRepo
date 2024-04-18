@@ -159,9 +159,36 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638490526614310316
+  lastModified: 638490528065815832
   FileSizes: []
   Exists: 1
+--- !u!114 &-3951582165084699245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ending Trash of 3
+  m_EditorClassIdentifier: 
+  Path: event:/Ending Trash of 3
+  Guid:
+    Data1: -201876553
+    Data2: 1324395096
+    Data3: 496093840
+    Data4: 216628020
+  Banks:
+  - {fileID: 5625715645444658662}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19648
 --- !u!114 &-3108113877609981228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,10 +204,10 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638490526614363196
+  lastModified: 638490528065914245
   FileSizes:
   - Name: 
-    Value: 1378
+    Value: 1468
   Exists: 1
 --- !u!114 &-3018875923930647434
 MonoBehaviour:
@@ -227,6 +254,33 @@ MonoBehaviour:
   lastModified: 638490526612571350
   FileSizes: []
   Exists: 1
+--- !u!114 &-2015572308617966136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ending 1 of 3
+  m_EditorClassIdentifier: 
+  Path: event:/Ending 1 of 3
+  Guid:
+    Data1: -398694741
+    Data2: 1097838064
+    Data3: -1585522284
+    Data4: -109239219
+  Banks:
+  - {fileID: 5625715645444658662}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19839
 --- !u!114 &-77458493660939975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,8 +300,8 @@ MonoBehaviour:
     Data3: -58514507
     Data4: 1415110502
   Banks:
-  - {fileID: -4097382737424517087}
   - {fileID: 3786366571582682210}
+  - {fileID: -4097382737424517087}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -286,12 +340,14 @@ MonoBehaviour:
   - {fileID: -5575983435928856771}
   - {fileID: -5672300880038052894}
   - {fileID: 8275291178638639558}
+  - {fileID: -3951582165084699245}
+  - {fileID: -2015572308617966136}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4097382737424517087}
   StringsBanks:
   - {fileID: -3108113877609981228}
-  cacheTime: 638490526622078345
+  cacheTime: 638490528069224407
   cacheVersion: 131617
 --- !u!114 &1902375441753450784
 MonoBehaviour:
@@ -399,7 +455,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Endings.bank
   Name: Endings
   StudioPath: bank:/Endings
-  lastModified: 638490526621684021
+  lastModified: 638490528069224407
   FileSizes: []
   Exists: 1
 --- !u!114 &8275291178638639558
