@@ -27,6 +27,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8116403102983900597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Bank A.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SFX/FmodBanks/Desktop/Bank A.bank
+  Name: Bank A
+  StudioPath: bank:/New Folder/Bank A
+  lastModified: 638490526622078345
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7342442447139174812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +87,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/BGMusic.bank
   Name: BGMusic
   StudioPath: bank:/BGMusic
-  lastModified: 638488973023218643
+  lastModified: 638490526613854250
   FileSizes: []
   Exists: 1
 --- !u!114 &-5672300880038052894
@@ -141,7 +159,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638488973023323459
+  lastModified: 638490526614310316
   FileSizes: []
   Exists: 1
 --- !u!114 &-3108113877609981228
@@ -159,10 +177,10 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638488973023433177
+  lastModified: 638490526614363196
   FileSizes:
   - Name: 
-    Value: 1198
+    Value: 1378
   Exists: 1
 --- !u!114 &-3018875923930647434
 MonoBehaviour:
@@ -206,7 +224,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 638488973023138853
+  lastModified: 638490526612571350
   FileSizes: []
   Exists: 1
 --- !u!114 &-77458493660939975
@@ -255,6 +273,9 @@ MonoBehaviour:
   - {fileID: -5887205591389374934}
   - {fileID: -4097382737424517087}
   - {fileID: 3786366571582682210}
+  - {fileID: -8116403102983900597}
+  - {fileID: 1902375441753450784}
+  - {fileID: 5625715645444658662}
   EditorEvents:
   - {fileID: -3018875923930647434}
   - {fileID: 4988149399655359967}
@@ -264,13 +285,32 @@ MonoBehaviour:
   - {fileID: -8938087425477432118}
   - {fileID: -5575983435928856771}
   - {fileID: -5672300880038052894}
+  - {fileID: 8275291178638639558}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4097382737424517087}
   StringsBanks:
   - {fileID: -3108113877609981228}
-  cacheTime: 638488973023522924
+  cacheTime: 638490526622078345
   cacheVersion: 131617
+--- !u!114 &1902375441753450784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Bank B.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SFX/FmodBanks/Desktop/Bank B.bank
+  Name: Bank B
+  StudioPath: bank:/Bank B
+  lastModified: 638490526619260388
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2062444909762055618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +353,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638488973023522924
+  lastModified: 638490526615151482
   FileSizes: []
   Exists: 1
 --- !u!114 &4988149399655359967
@@ -344,3 +384,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2761
+--- !u!114 &5625715645444658662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Endings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SFX/FmodBanks/Desktop/Endings.bank
+  Name: Endings
+  StudioPath: bank:/Endings
+  lastModified: 638490526621684021
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8275291178638639558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ending Good of 3
+  m_EditorClassIdentifier: 
+  Path: event:/Ending Good of 3
+  Guid:
+    Data1: 1663321827
+    Data2: 1262789843
+    Data3: -470164091
+    Data4: -1135907056
+  Banks:
+  - {fileID: -8116403102983900597}
+  - {fileID: 1902375441753450784}
+  - {fileID: 5625715645444658662}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20989
