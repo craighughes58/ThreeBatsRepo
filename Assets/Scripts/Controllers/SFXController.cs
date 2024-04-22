@@ -100,7 +100,10 @@ public class SFXController : MonoBehaviour
     }
 
     #endregion
-
+    
+    /// <summary>
+    /// Adds SFX to the dictionary
+    /// </summary>
     private void CreateDictionary()
     {
         _sfxDictionary = new Dictionary<SFX, FMODUnity.StudioEventEmitter>();
