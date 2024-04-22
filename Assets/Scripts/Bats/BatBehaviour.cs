@@ -61,15 +61,6 @@ public class BatBehaviour : MonoBehaviour
     #region Movement and Node Management
     private IEnumerator MovementPattern(bool firstRun)
     {
-        try
-        {
-            BatAttack?.Invoke(SFXController.SFX.BATATTACK);
-        }
-        catch
-        {
-            Debug.Log("Unable to find SFX obj");
-        }
-
         SetNextNode();
         //wait on the wall
         yield return new WaitForSeconds(UnityEngine.Random.Range(_wallDelayBounds.x,_wallDelayBounds.y));
@@ -78,6 +69,15 @@ public class BatBehaviour : MonoBehaviour
         //50/50 chance they fly at the player as long as its not the first movement
         if (UnityEngine.Random.Range(0,2) == 0 && !firstRun)
         {
+            try
+            {
+                BatAttack?.Invoke(SFXController.SFX.BATATTACK);
+            }
+            catch
+            {
+                Debug.Log("Unable to find SFX obj");
+            }
+
             _jumpScarer.ActivateJumpscare();
             while(!_reachedPlayer)
             {
@@ -125,16 +125,15 @@ public class BatBehaviour : MonoBehaviour
         {
             _reachedNode = true;
         }
-        else if(collision.gameObject.tag.Equals("Broom") && !_hasBeenHit)
+        else if(collision.gameObject.tag.Equals("Broom") && !_hasBeenHit)//
         {
-            _hasBeenHit = true;
             if(collision.TryGetComponent<Broom>(out Broom broom))
             {
                 if(broom.IsThrown)
                 {
+                    _hasBeenHit = true;
                     BatHit?.Invoke(SFXController.SFX.ENEMYCAPTURED);
                     BatDied?.Invoke();
-                      
                     Destroy(gameObject);
                     Destroy(Instantiate(_capturedScreen,transform.position,Quaternion.identity),1f);
                 }

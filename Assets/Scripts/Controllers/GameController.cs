@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
 
     #region Private Variables
 
-    private int _numBatsAlive = 3;
+    private int _numBatsAlive = 9;
     private bool _diedToBat = false;
 
     [Tooltip("The light that the player will go to")]
