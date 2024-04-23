@@ -112,8 +112,8 @@ public class BatBehaviour : MonoBehaviour
         
     }
     #endregion
-    #region Collisions and Triggers
 
+    #region Collisions and Triggers
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -121,23 +121,25 @@ public class BatBehaviour : MonoBehaviour
         {
             StartCoroutine(DelayedFoundPlayer());
         }
-        else if (collision.gameObject.tag.Equals("Node"))
+        if (collision.gameObject.tag.Equals("Node"))
         {
             _reachedNode = true;
-        }
-        else if(collision.gameObject.tag.Equals("Broom") && !_hasBeenHit)//
+        }        
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent<Broom>(out Broom broom) && !_hasBeenHit)
         {
-            if(collision.TryGetComponent<Broom>(out Broom broom))
+            if (broom.IsThrown)
             {
-                if(broom.IsThrown)
-                {
-                    _hasBeenHit = true;
-                    BatHit?.Invoke(SFXController.SFX.ENEMYCAPTURED);
-                    BatDied?.Invoke();
-                    Destroy(gameObject);
-                    Destroy(Instantiate(_capturedScreen,transform.position,Quaternion.identity),1f);
-                }
-            }   
+                _hasBeenHit = true;
+                BatHit?.Invoke(SFXController.SFX.ENEMYCAPTURED);
+                BatDied?.Invoke();
+
+                Destroy(gameObject);
+                Destroy(Instantiate(_capturedScreen, transform.position, Quaternion.identity), 1f);
+            }
         }
     }
 

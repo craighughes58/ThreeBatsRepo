@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242210873602307054, guid: 6abba9c1f4bb16b46859eb204fef481e, type: 3}
+      propertyPath: _batSounds
+      value: 
+      objectReference: {fileID: 2145884643}
     - target: {fileID: 6020057311752753661, guid: 6abba9c1f4bb16b46859eb204fef481e, type: 3}
       propertyPath: m_Name
       value: SFX Controller
@@ -5593,6 +5597,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4813174449426976347, guid: 12df4170675b3484987ffa4c23cab477, type: 3}
   m_PrefabInstance: {fileID: 2107783360}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2145884643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7966058765343094975, guid: 148fa60b2acf1b74eac20ff6d292f64c, type: 3}
+  m_PrefabInstance: {fileID: 1726910970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2084421304100300803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5604,14 +5619,6 @@ PrefabInstance:
     - target: {fileID: 1257916462983795023, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
       propertyPath: m_Name
       value: Craig
-      objectReference: {fileID: 0}
-    - target: {fileID: 2553464673091360363, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-      propertyPath: m_TagString
-      value: Broom
-      objectReference: {fileID: 0}
-    - target: {fileID: 3340808043325987354, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-      propertyPath: m_FlipX
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5443066980799247958, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
       propertyPath: m_LocalPosition.x
