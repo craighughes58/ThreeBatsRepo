@@ -4631,10 +4631,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundMusic
       objectReference: {fileID: 0}
-    - target: {fileID: 7966058765343094975, guid: 148fa60b2acf1b74eac20ff6d292f64c, type: 3}
-      propertyPath: StopEvent
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5458,18 +5454,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Craig
       objectReference: {fileID: 0}
-    - target: {fileID: 1257916462983795023, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2553464673091360363, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-      propertyPath: m_TagString
-      value: Broom
-      objectReference: {fileID: 0}
-    - target: {fileID: 3340808043325987354, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5443066980799247958, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -5509,22 +5493,6 @@ PrefabInstance:
     - target: {fileID: 5443066980799247958, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7199301185290577489, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-      propertyPath: m_Size.y
-      value: 1.1479983
-      objectReference: {fileID: 0}
-    - target: {fileID: 7199301185290577489, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.07399917
-      objectReference: {fileID: 0}
-    - target: {fileID: 7199301185290577489, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 311
-      objectReference: {fileID: 0}
-    - target: {fileID: 7199301185290577489, guid: f25f1600c27e6904094d5ca93d1bdaea, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 192
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
