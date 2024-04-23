@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int _startingBatCount = 3;
     [SerializeField] private GameObject _racoonPrefab;
     [SerializeField] private Transform _doorLocation;
+    [SerializeField] private GameObject _racTrigger;
 
     #endregion
 
@@ -122,6 +123,7 @@ public class GameController : MonoBehaviour
         
         if(_numBatsAlive <= 0)
         {
+            SpawnRaccoonTrigger();
             StartCoroutine(NotifyOfDoor());
             _doorLight.SetActive(true);
             CaughtAllBats?.Invoke();
@@ -132,6 +134,11 @@ public class GameController : MonoBehaviour
     #endregion
 
     #region Raccoon!
+
+    private void SpawnRaccoonTrigger()
+    {
+        _racTrigger.SetActive(true);
+    }
 
     /// <summary>
     /// Spawns raccoon at the end of the game
