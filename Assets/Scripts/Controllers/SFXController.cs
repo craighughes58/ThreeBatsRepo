@@ -14,6 +14,7 @@ public class SFXController : MonoBehaviour
     [SerializeField] FMODUnity.StudioEventEmitter _duck;
     [SerializeField] FMODUnity.StudioEventEmitter _doorOpens;
     [SerializeField] FMODUnity.StudioEventEmitter _deathSound;
+    [SerializeField] FMODUnity.StudioEventEmitter _batSounds;
 
     #endregion
 
@@ -41,10 +42,13 @@ public class SFXController : MonoBehaviour
 
             GameController.SpawnedRaccoon += PlaySFX;
             GameController.DoorOpens += PlaySFX;
+            GameController.CaughtAllBats += StopBatAmbient;
 
             PlayerMovement.Duck += PlaySFX;
 
             PlayerController.DeathSFX += PlaySFX;
+
+            
         }
         else
         {
@@ -56,6 +60,7 @@ public class SFXController : MonoBehaviour
 
             GameController.SpawnedRaccoon -= PlaySFX;
             GameController.DoorOpens -= PlaySFX;
+            GameController.CaughtAllBats -= StopBatAmbient;
 
             PlayerMovement.Duck -= PlaySFX;
 
@@ -76,7 +81,8 @@ public class SFXController : MonoBehaviour
         ENEMYCAPTURED,
         DUCK,
         DOOROPENS,
-        DEATH
+        DEATH,
+        BATNOISES
     }
 
     #endregion
@@ -115,10 +121,19 @@ public class SFXController : MonoBehaviour
         _sfxDictionary.Add(SFX.DUCK, _duck);
         _sfxDictionary.Add(SFX.DOOROPENS, _doorOpens);
         _sfxDictionary.Add(SFX.DEATH, _deathSound);
+        _sfxDictionary.Add(SFX.BATNOISES, _batSounds);
     }
 
     private void PlaySFX(SFX sfx)
     {
         _sfxDictionary[sfx].Play();
+    }
+
+    /// <summary>
+    /// Disables bat sounds when all bats are dead
+    /// </summary>
+    private void StopBatAmbient()
+    {
+        _sfxDictionary[SFX.BATNOISES].Stop();
     }
 }

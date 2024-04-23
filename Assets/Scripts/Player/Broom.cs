@@ -45,6 +45,17 @@ public class Broom : MonoBehaviour
     #endregion
 
     #region Unity Functions
+
+    private void OnEnable()
+    {
+        BatBehaviour.BatDied += DisableThrown;
+    }
+
+    private void OnDisable()
+    {
+        BatBehaviour.BatDied -= DisableThrown;
+    }
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -62,10 +73,10 @@ public class Broom : MonoBehaviour
     /// <param name="force"></param>
     public void Throw(float force)
     {
-        BroomThrown?.Invoke(SFXController.SFX.BROOMTHROW);
-
-        _attachedToCraig = false;
         IsThrown = true;
+        BroomThrown?.Invoke(SFXController.SFX.BROOMTHROW);
+        _attachedToCraig = false;
+        
         transform.parent = null;
         _rb.bodyType = RigidbodyType2D.Dynamic;
         _rb.AddForce(transform.up * force);
@@ -106,6 +117,23 @@ public class Broom : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        IsThrown = false;
+        _trigger.enabled = false;
+        _trigger.enabled = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.TryGetComponent<PlayerController>(out PlayerController pc))
+        {
+            _trigger.enabled = false;
+            _trigger.enabled = true;
+        }
+    }
+
+    private void DisableThrown()
+    {
+        IsThrown = false;
     }
 
     #endregion
