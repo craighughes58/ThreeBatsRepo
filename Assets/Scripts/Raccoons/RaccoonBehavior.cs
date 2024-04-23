@@ -90,7 +90,19 @@ public class RaccoonBehavior : MonoBehaviour
         //restart
         StartCoroutine(CalculateZigZag());
     }
-    
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent<Broom>(out Broom broom))
+        {
+            if (broom.IsThrown)
+            {
+                Destroy(gameObject);
+                Destroy(Instantiate(_capturedScreen, transform.position, Quaternion.identity), 1f);
+            }
+        }
+    }
 
 
 }

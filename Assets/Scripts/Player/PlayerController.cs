@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -133,6 +134,11 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.TryGetComponent<RaccoonBehavior>(out RaccoonBehavior racBehaviour))
         {
             KilledByRaccoon();
+        }
+
+        if (collision.gameObject.tag.Equals("Exit"))
+        {
+            SceneManager.LoadScene("GoodEnding");
         }
     }
 
