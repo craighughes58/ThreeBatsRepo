@@ -105,7 +105,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/BGMusic.bank
   Name: BGMusic
   StudioPath: bank:/BGMusic
-  lastModified: 638494006711474955
+  lastModified: 638494723059620891
   FileSizes: []
   Exists: 1
 --- !u!114 &-7342442447139174812
@@ -276,7 +276,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Bank A.bank
   Name: Bank A
   StudioPath: bank:/New Folder/Bank A
-  lastModified: 638494006711534804
+  lastModified: 638494723061490323
   FileSizes: []
   Exists: 1
 --- !u!114 &-4097382737424517087
@@ -486,7 +486,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638494006711664446
+  lastModified: 638494723060352325
   FileSizes:
   - Name: 
     Value: 1660
@@ -588,7 +588,7 @@ MonoBehaviour:
   - {fileID: 4290391693464743053}
   StringsBanks:
   - {fileID: -1877236015027400176}
-  cacheTime: 638494836903853014
+  cacheTime: 638494723061490323
   cacheVersion: 131617
 --- !u!114 &716906211992811784
 MonoBehaviour:
@@ -758,7 +758,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Opening.bank
   Name: Opening
   StudioPath: bank:/Opening
-  lastModified: 638494006711704342
+  lastModified: 638494723060743436
   FileSizes: []
   Exists: 1
 --- !u!114 &2062444909762055618
@@ -860,7 +860,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638494836903853014
+  lastModified: 638494723061249775
   FileSizes: []
   Exists: 1
 --- !u!114 &2596103390787812340
@@ -878,7 +878,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Endings.bank
   Name: Endings
   StudioPath: bank:/Endings
-  lastModified: 638494006711614580
+  lastModified: 638494723059970524
   FileSizes: []
   Exists: 1
 --- !u!114 &2912691132992194076
@@ -941,7 +941,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Bank B.bank
   Name: Bank B
   StudioPath: bank:/Bank B
-  lastModified: 638494006711564707
+  lastModified: 638494723059207079
   FileSizes: []
   Exists: 1
 --- !u!114 &4290391693464743053
@@ -959,7 +959,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638494006711644495
+  lastModified: 638494723060332331
   FileSizes: []
   Exists: 1
 --- !u!114 &4988149399655359967
@@ -1050,7 +1050,7 @@ MonoBehaviour:
   Path: Assets/SFX/FmodBanks/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 638494836903743308
+  lastModified: 638494723058595611
   FileSizes: []
   Exists: 1
 --- !u!114 &7624969290212615968
